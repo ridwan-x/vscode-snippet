@@ -1,0 +1,89 @@
+{
+	"Ajax jQuery": {
+		"prefix": "ajax",
+		"description": "Ajax jQuery",
+		"scope": "javascript",
+		"body": [
+			"$.ajax({",
+			"    \"async\": true,",
+			"    \"crossDomain\": true,",
+			"    \"url\": \"\",",
+			"    \"method\": \"GET\",",
+			"    \"headers\": {",
+			"        \"api-key\": \"\",",
+			"        \"Content-Type\": \"application/json\"",
+			"    },",
+			"    \"processData\": false,",
+			"    \"data\": {name:'N°3'}",
+			"}).done(function (response) {",
+			"    console.log(response)",
+			"})"
+		]
+	},
+	"Ajax chunk jQuery": {
+		"prefix": "ajax chuk",
+		"description": "Ajax run asyncronus chunk data",
+		"scope": "javascript",
+		"body": [
+			"// Ajax Chunk Data",
+			"$.ajax({",
+			"    \"async\": true,",
+			"    \"crossDomain\": true,",
+			"    \"url\": \"\",",
+			"    \"method\": \"GET\",",
+			"    \"headers\": {",
+			"        \"api-key\": \"\",",
+			"        \"Content-Type\": \"application/json\"",
+			"    },",
+			"    \"processData\": false,",
+			"    \"data\": {name:'N°3'}",
+			"}).done(function (response) {",
+			"    console.log(response);",
+			"    let go = [];",
+			"        chunk = 3;",
+			"        progress = 1;",
+			"    for (let i = 0; i < response.length; i += chunk) {",
+			"        let execute = new Promise((resolve, reject) => {",
+			"            $.ajax({",
+			"                \"async\": true,",
+			"                \"crossDomain\": true,",
+			"                \"url\": \"\",",
+			"                \"method\": \"GET\",",
+			"                \"headers\": {",
+			"                    \"api-key\": \"\",",
+			"                    \"Content-Type\": \"application/json\"",
+			"                },",
+			"                \"processData\": false,",
+			"                \"data\": {name:'N°3'}",
+			"            }).done(function (response) {",
+			"                console.log('progress = '+ Math.ceil(progress++ * 100 / go.length));",
+			"                resolve(response.slice(i, i + chunk));",
+			"            })",
+			"        });",
+			"",
+			"        go.push(execute);",
+			"    }",
+			"",
+			"    Promise.all(go).then((result) => {",
+			"        console.log(result);",
+			"    });",
+			"});"
+		]
+	}
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
