@@ -1,7 +1,7 @@
 {
-	"Open Centered Window - JS Window": {
+	"Open Centered Window": {
 		"prefix": "js-open-window",
-		"description": "Open Centered Window DOM - JS Window",
+		"description": "Open Centered Window - JS Window",
 		"scope": "javascript",
 		"body": [
 			"function openCenteredWindow({url, width, height}) {",
@@ -41,7 +41,7 @@
 	},
 	"Window History PushState - JS Window Location": {
 		"prefix": "js-history-pushstate",
-		"description": "Change url without reload page - JS WIndow Location",
+		"description": "Change url without reload page - JS Window History",
 		"scope": "javascript",
 		"body": [
 			"window.history.pushState(null, null, window.location.pathname);"

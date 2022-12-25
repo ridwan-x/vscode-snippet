@@ -1,24 +1,24 @@
 {
 	"Set multiple attributes and values:": {
-		"prefix": "jq-attr-multiple ",
+		"prefix": "$attr-multiple ",
 		"description": "Set multiple attributes and values: $(selector).attr({attribute:value, attribute:value,...})",
 		"scope": "javascript",
 		"body": [
-			"$(\"img\").attr({width: \"150\", height: \"100\"});"
+			"$(\"img\").attr({width: \"150\", height: \"100\"})"
 		]
 	},
 	"Set attribute and value using a functio": {
-		"prefix": "jq-attr-function",
+		"prefix": "$attr-function",
 		"description": "Set attribute and value using a function: $(selector).attr(attribute,function(index,currentvalue))",
 		"scope": "javascript",
 		"body": [
 			"$(\"img\").attr(\"width\",function(n, v){",
 			"      return v - 50;",
-			"});"
+			"})"
 		]
 	},
 	"Return the value of an attribute": {
-		"prefix": "jq-attr-value",
+		"prefix": "$attr-value",
 		"description": "Return the value of an attribute: $(selector).attr(attribute)",
 		"scope": "javascript",
 		"body": [
@@ -26,11 +26,11 @@
 		]
 	},
 	"Set the attribute and value": {
-		"prefix": "jq-attr",
+		"prefix": "$attr",
 		"description": "Set the attribute and value: $(selector).attr(attribute,value)",
 		"scope": "javascript",
 		"body": [
-			"$$(\"img\").attr(\"width\",\"500\");"
+			"$(\"${1:img}\").attr(\"${2:width}\",\"${3:500}\")"
 		]
 	}
 	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
