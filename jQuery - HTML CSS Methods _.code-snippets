@@ -1,0 +1,52 @@
+{
+	"Set multiple attributes and values:": {
+		"prefix": "jq-attr-multiple ",
+		"description": "Set multiple attributes and values: $(selector).attr({attribute:value, attribute:value,...})",
+		"scope": "javascript",
+		"body": [
+			"$(\"img\").attr({width: \"150\", height: \"100\"});"
+		]
+	},
+	"Set attribute and value using a functio": {
+		"prefix": "jq-attr-function",
+		"description": "Set attribute and value using a function: $(selector).attr(attribute,function(index,currentvalue))",
+		"scope": "javascript",
+		"body": [
+			"$(\"img\").attr(\"width\",function(n, v){",
+			"      return v - 50;",
+			"});"
+		]
+	},
+	"Return the value of an attribute": {
+		"prefix": "jq-attr-value",
+		"description": "Return the value of an attribute: $(selector).attr(attribute)",
+		"scope": "javascript",
+		"body": [
+			"$(\"img\").attr(\"width\")"
+		]
+	},
+	"Set the attribute and value": {
+		"prefix": "jq-attr",
+		"description": "Set the attribute and value: $(selector).attr(attribute,value)",
+		"scope": "javascript",
+		"body": [
+			"$$(\"img\").attr(\"width\",\"500\");"
+		]
+	}
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}

@@ -1,6 +1,6 @@
 {
-	"Ajax jQuery": {
-		"prefix": "ajax",
+	"GET": {
+		"prefix": "jq-ajax",
 		"description": "Ajax jQuery",
 		"scope": "javascript",
 		"body": [
@@ -20,8 +20,8 @@
 			"})"
 		]
 	},
-	"Ajax chunk jQuery": {
-		"prefix": "ajax chuk",
+	"GET request per 3": {
+		"prefix": "jq-ajax-chuk",
 		"description": "Ajax run asyncronus chunk data",
 		"scope": "javascript",
 		"body": [
